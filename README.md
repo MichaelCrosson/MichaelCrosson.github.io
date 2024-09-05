@@ -1,1 +1,2 @@
-# MichaelCrosson.github.io
+# website-template
+A basic website template for personal use.
