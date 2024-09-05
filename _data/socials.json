@@ -2,11 +2,11 @@
     "social_media": [
         {
             "platform": "LinkedIn",
-            "user_path": "https://www.linkedin.com/in/michaelacrosson/"
+            "user_path": "michaelacrosson/"
         },
         {
             "platform": "GitHub",
-            "user_path": "https://github.com/MichaelCrosson"
+            "user_path": "MichaelCrosson"
         }
     ]
 }
