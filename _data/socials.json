@@ -1,28 +1,12 @@
 {
     "social_media": [
         {
-            "platform": "Facebook",
-            "user_path": ""
-        },
-        {
-            "platform": "Instagram",
-            "user_path": ""
-        },
-        {
-            "platform": "Twitter",
-            "user_path": ""
-        },
-        {
             "platform": "LinkedIn",
-            "user_path": ""
+            "user_path": "https://www.linkedin.com/in/michaelacrosson/"
         },
         {
             "platform": "GitHub",
-            "user_path": ""
-        },
-        {
-            "platform": "YouTube",
-            "user_path": ""
+            "user_path": "https://github.com/MichaelCrosson"
         }
     ]
 }
