@@ -18,7 +18,7 @@ title: Welcome
 	<div class="carousel-inner">
 		{% for i in site.data.carousel.carousel_slides %}
 		<div class="carousel-item {% if forloop.index == 1 %}active{% endif %}">
-			<img class="d-block w-100" src="{{ site.baseurl }}static/img/carousel/{{i.img}}" alt="{{ i.label }}">
+			<img class="d-block w-100" src="static/img/carousel/{{i.img}}" alt="{{ i.label }}">
 			<div class="carousel-caption d-none d-md-block">
 				<h5>{{ i.label }}</h5>
 				<p>{{ i.caption }}</p>
@@ -39,7 +39,7 @@ title: Welcome
 <p class="text-center">The quick brown fox jumps over the lazy dog.</p>
 
 <p class="text-center">Click here to see the
-	<a href="{{ site.baseurl }}404.html">404 page</a>.
+	<a href="404.html">404 page</a>.
 </p>
 
-<script src="{{ site.baseurl }}static/js/carousel.js"></script>
+<script src="static/js/carousel.js"></script>

@@ -1,7 +1,7 @@
 markdown: redcarpet
 baseurl: 
 exclude: ['README.md']
-title: BrandName
+title: Michael Crosson
 
 sass:
   sass_dir: _sass
