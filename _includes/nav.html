@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ site.baseurl }}index.html" title="Home">{{ site.title }}</a>
+    <a class="navbar-brand" href="index.html" title="Home">{{ site.title }}</a>
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" title="Expand">
       <span class="icon-bar top-bar"></span>
@@ -13,7 +13,7 @@
       {% for page in mypages %}
         {% if page.type == 'navigation' %}
         <li class="nav-item">
-          <a class="nav-link" href="{{ site.baseurl }}{{ page.path }}">{{ page.title }}</a>
+          <a class="nav-link" href="{{ page.path }}">{{ page.title }}</a>
         </li>
         {% endif %}
       {% endfor %}
