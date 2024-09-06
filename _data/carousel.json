@@ -1,22 +1,34 @@
 {
   "carousel_slides": [
     {
-      "img": "01-stock-image.jpg",
+      "img": "Headshot.jpg",
       "alt": "First slide",
-      "label": "First slide label",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "label": "Michael Crosson",
+      "caption": "Welcome to my Website!"
     },
     {
-      "img": "02-stock-image.jpg",
+      "img": "wingeating.jpg",
       "alt": "Second slide",
-      "label": "Second slide label",
-      "caption": "In consequat mollis suscipit. Donec mauris erat."
+      "label": "Wing Eating Victory",
+      "caption": "My fourth time conquering the Pluckers Fire in the Hole Challenge"
     },
     {
-      "img": "03-stock-image.jpg",
+      "img": "baxawholefoods.jpg",
       "alt": "Third slide",
-      "label": "Third slide label",
-      "caption": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+      "label": "BAXA on an Adventure!",
+      "caption": "Taking the members of my club to visit a company"
+    },
+    {
+      "img": "car.jpg",
+      "alt": "Fourth slide",
+      "label": "My car",
+      "caption": "Lexus IS300 2002, Manual with LSD"
+    },
+    {
+      "img": "foodnight.jpg",
+      "alt": "Fifth slide",
+      "label": "Dumpling Night with friends",
+      "caption": "Making food and having fun on Lunar New Years"
     }
   ]
 }
