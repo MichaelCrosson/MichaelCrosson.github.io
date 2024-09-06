@@ -8,34 +8,84 @@ order: 1
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            background-color: #f4f4f9;
+            padding: 20px 0;
+        }
+        .container h1 {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2em;
+            color: #333;
+        }
+        .project-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .project-card {
+            background-color: white;
+            width: 30%;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .project-description {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        .project-links {
+            display: flex;
+            justify-content: space-between;
+        }
+        .project-link {
+            text-decoration: none;
+            color: #3498db;
+            font-size: 1.1em;
+        }
+        .project-link:hover {
+            color: #2ecc71;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <h1>My Projects</h1>
         <div class="project-section">
             <div class="project-card">
-                <h2 class="project-title">Project 1: AI Chatbot</h2>
-                <p class="project-description">An AI-powered chatbot designed to assist users with customer service inquiries using NLP techniques.</p>
+                <h2 class="project-title">Project 1: Looped Videos</h2>
+                <p class="project-description">A Python-based looping program for youtube videos. Simply give it a youtube video and it will loop it to be 1 hour long! (One of my first projects)</p>
                 <div class="project-links">
-                    <a href="https://github.com/yourusername/ai-chatbot" class="project-link" target="_blank">GitHub</a>
-                    <a href="https://yourwebsite.com/ai-chatbot-demo" class="project-link" target="_blank">Live Demo</a>
+                    <a href="https://github.com/MichaelCrosson/Loop-Youtube-Videos-for-1-hour" class="project-link" target="_blank">GitHub</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <h2 class="project-title">Project 2: Predictive Analytics Dashboard</h2>
-                <p class="project-description">A dashboard that visualizes predictive models for customer churn analysis, built with Python and Flask.</p>
+                <h2 class="project-title">Project 2: Prompt Pilot</h2>
+                <p class="project-description">An interactive web app that teaches users how to prompt and interact with LLMs more efficiently with targeted feedback.</p>
                 <div class="project-links">
-                    <a href="https://github.com/yourusername/churn-dashboard" class="project-link" target="_blank">GitHub</a>
-                    <a href="https://yourwebsite.com/churn-dashboard-demo" class="project-link" target="_blank">Live Demo</a>
+                    <a href="https://microsoftcapstonetram.anvil.app/" class="project-link" target="_blank">Website</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <h2 class="project-title">Project 3: Sentiment Analysis Tool</h2>
-                <p class="project-description">A Python-based tool that analyzes sentiment from social media data and generates reports.</p>
+                <h2 class="project-title">Project 3: TechCrunch Article Summarizer</h2>
+                <p class="project-description">Ever gotten tired or reading so many long articles? Simply imput a search term and watch this program scrape and summarize them for easier reading.</p>
                 <div class="project-links">
-                    <a href="https://github.com/yourusername/sentiment-tool" class="project-link" target="_blank">GitHub</a>
-                    <a href="https://yourwebsite.com/sentiment-tool-demo" class="project-link" target="_blank">Live Demo</a>
+                    <a href="https://github.com/MichaelCrosson/TechCrunchScraper" class="project-link" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
