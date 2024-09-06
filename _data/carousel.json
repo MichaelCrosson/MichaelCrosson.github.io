@@ -1,34 +1,40 @@
 {
   "carousel_slides": [
     {
-      "img": "Headshot.jpg",
-      "alt": "First slide",
-      "label": "Michael Crosson",
-      "caption": "Welcome to my Website!"
-    },
-    {
       "img": "wingeating.jpg",
-      "alt": "Second slide",
+      "alt": "First slide",
       "label": "Wing Eating Victory",
       "caption": "My fourth time conquering the Pluckers Fire in the Hole Challenge"
     },
     {
       "img": "baxawholefoods.jpg",
-      "alt": "Third slide",
+      "alt": "Second slide",
       "label": "BAXA on an Adventure!",
       "caption": "Taking the members of my club to visit a company"
     },
     {
-      "img": "car.jpg",
+      "img": "carchango.jpg",
+      "alt": "Third slide",
+      "label": "The Best TexMex in Austin",
+      "caption": "My car next to my favorite food spot in Austin"
+    },
+    {
+      "img": "shrine.jpg",
       "alt": "Fourth slide",
-      "label": "My car",
-      "caption": "Lexus IS300 2002, Manual with LSD"
+      "label": "The Inari Shrine",
+      "caption": "One of my favorite places in Japan"
     },
     {
       "img": "foodnight.jpg",
       "alt": "Fifth slide",
       "label": "Dumpling Night with friends",
       "caption": "Making food and having fun on Lunar New Years"
+    },
+    {
+      "img": "dice.jpg",
+      "alt": "Sixth slide",
+      "label": "2-Sided Dice",
+      "caption": "Check this out! What a creative way to flip a coin!"
     }
   ]
 }
