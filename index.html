@@ -3,7 +3,8 @@ layout: default
 title: Welcome
 ---
 
-<p class="text-center">Hello! Welcome to my website. Below are some pictures of cool things and fun times. Feel free to explore and I hope you enjoy your stay!</p>
+<p class="text-center">Hello! Welcome to my website. Below are some pictures of cool things and fun times. Feel free to explore and I hope you enjoy your stay!
+</p>
 
 <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
@@ -20,8 +21,10 @@ title: Welcome
                 <img class="d-block w-100 carousel-image" src="static/img/carousel/{{i.img}}" alt="{{ i.label }}">
             </div>
             <div class="carousel-caption d-none d-md-block">
-                <h5>{{ i.label }}</h5>
-                <p>{{ i.caption }}</p>
+                <div class="caption-background">
+                    <h5>{{ i.label }}</h5>
+                    <p>{{ i.caption }}</p>
+                </div>
             </div>
         </div>
         {% endfor %}
@@ -55,8 +58,15 @@ title: Welcome
         object-fit: cover; 
     }
 
+    /* Semi-transparent background for text readability */
+    .caption-background {
+        background-color: rgba(0, 0, 0, 0.6); /* Black background with 60% opacity */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
     .carousel-caption h5, .carousel-caption p {
-        text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000; /* Black outline */
-        color: #fff; /* Ensures text color remains readable */
+        color: #fff; /* White text for contrast against the dark background */
+        margin: 0;
     }
 </style>
