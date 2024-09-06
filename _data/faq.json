@@ -6,23 +6,23 @@
     },
     {
       "question": "What are some of your hobbies?",
-      "answer": "Strategy and board games, building tools and legos, and exploring new restaurants or areas are things I love doing just to name a few!"
+      "answer": "Strategy and board games, building tools and legos, and exploring new restaurants or areas are all things I love doing just to name a few!"
     },
     {
-      "question": "What sparked your interest in data science/technology?",
-      "answer": "I have always had an interest in how the world works and I came to the realization at a young age that data and experinces drive a lot of the decisions that have been made today. Using technology and data science as a tool, we can leverage these to make a bigger impact for humanity and the world."
+      "question": "Why are you interested in data science/technology?",
+      "answer": "I've always been fascinated by how the world works and realized early on that data and experiences shape many decisions today. By harnessing technology and data science, we can drive meaningful impact for humanity and the world."
     },
     {
       "question": "What’s the most interesting place you’ve traveled to?",
-      "answer": "I travelled to Japan as a part of a college graduation trip and enaging in the culture as well as being able to stretch my Japanese speaking legs was amazing. The food, atmosphere, people, and animals were all wonderful and I am excited to visit there again."
+      "answer": "I traveled to Japan for my college graduation trip, and getting immersed in the culture while putting my Japanese skills to the test was incredible. The food, the atmosphere, the people, even the animals were amazing. I can’t wait to go back!"
     },
     {
       "question": "If you weren’t working in tech, what would you be doing?",
-      "answer": "If you have ever seen videos of people living in the woods building tools and houses from scratch, that is where I would be."
+      "answer": "If you've ever watched those videos of people living in the woods, building tools and homes from scratch—yeah, that’s totally where you'd find me!"
     },
     {
       "question": "Dogs or Cats?",
-      "answer": "While I think both have their perks, I am decidely a dog person."
+      "answer": "While I believe both have their perks, I am decidedly a dog person."
     }
   ]
 }
