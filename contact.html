@@ -31,3 +31,43 @@ function copyToClipboard(text) {
     });
 }
 </script>
+<script>
+function subscribe(email) {
+    fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer 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',  // Use a token with repo access
+            'Accept': 'application/vnd.github.v3+json'
+        },
+        body: JSON.stringify({
+            ref: 'main',  // Branch where the workflow is defined
+            inputs: {
+                action: 'subscribe',
+                email: email
+            }
+        })
+    }).then(response => response.json())
+      .then(data => console.log('Subscription action triggered:', data))
+      .catch(error => console.error('Error:', error));
+}
+</script>
+<script>
+function unsubscribe(email) {
+    fetch('https://api.github.com/repos/<owner>/<repo>/actions/workflows/manage_subscribers.yml/dispatches', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer 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',
+            'Accept': 'application/vnd.github.v3+json'
+        },
+        body: JSON.stringify({
+            ref: 'main',
+            inputs: {
+                action: 'unsubscribe',
+                email: email
+            }
+        })
+    }).then(response => response.json())
+      .then(data => console.log('Unsubscription action triggered:', data))
+      .catch(error => console.error('Error:', error));
+}
+</script>
