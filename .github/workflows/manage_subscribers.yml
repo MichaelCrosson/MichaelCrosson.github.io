@@ -1,7 +1,7 @@
 name: Manage Subscribers
 
 on:
-  workflow_dispatch:  # Trigger manually or through API
+  workflow_dispatch:
     inputs:
       email:
         description: 'Email to subscribe/unsubscribe'
@@ -22,7 +22,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        python-version: '3.x'
 
     - name: Install dependencies
       run: pip install --upgrade pip
@@ -32,9 +32,11 @@ jobs:
         python manage_subscribers.py ${{ github.event.inputs.action }} ${{ github.event.inputs.email }}
 
     - name: Commit and push changes
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}  # Use the GitHub secret here
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
         git add subscribers.json
         git commit -m "Updated subscriber list for ${{ github.event.inputs.action }} ${{ github.event.inputs.email }}"
-        git push
+        git push https://$GH_PAT@github.com/MichaelCrosson/MichaelCrosson.github.io.git HEAD:main
