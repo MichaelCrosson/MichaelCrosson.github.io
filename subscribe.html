@@ -3,39 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscribe to Newsletter</title>
+    <title>Subscribe/Unsubscribe</title>
 </head>
 <body>
-    <h1>Subscribe to Daily News</h1>
-    <form id="subscribe-form">
-        <label for="email">Enter your email to subscribe:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        <button type="submit">Subscribe</button>
-    </form>
-
-    <p id="subscribe-message"></p>
+    <h1>Subscribe/Unsubscribe from Newsletter</h1>
+    
+    <!-- Input for Email Address -->
+    <label for="email">Enter your email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <!-- Subscribe Button -->
+    <button onclick="subscribe()">Subscribe</button>
+    
+    <!-- Unsubscribe Button -->
+    <button onclick="unsubscribe()">Unsubscribe</button>
+    
+    <!-- Response Message -->
+    <p id="response-message"></p>
 
     <script>
-        document.getElementById('subscribe-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+        // Function to handle subscription
+        function subscribe() {
             const email = document.getElementById('email').value;
+            if (!email) {
+                document.getElementById('response-message').textContent = 'Please enter a valid email address.';
+                return;
+            }
             
-            fetch('/subscribe', {
+            fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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',
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email: email }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('subscribe-message').textContent = data.message;
-            })
-            .catch((error) => {
-                document.getElementById('subscribe-message').textContent = 'Error subscribing.';
-                console.error('Error:', error);
+                body: JSON.stringify({
+                    ref: 'main',  // Branch where the workflow is defined
+                    inputs: {
+                        action: 'subscribe',
+                        email: email
+                    }
+                })
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('response-message').textContent = `Successfully subscribed ${email}.`;
+                } else {
+                    document.getElementById('response-message').textContent = `Failed to subscribe ${email}.`;
+                }
+            }).catch(error => {
+                document.getElementById('response-message').textContent = `Error: ${error}`;
             });
-        });
+        }
+
+        // Function to handle unsubscription
+        function unsubscribe() {
+            const email = document.getElementById('email').value;
+            if (!email) {
+                document.getElementById('response-message').textContent = 'Please enter a valid email address.';
+                return;
+            }
+            
+            fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer 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',
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ref: 'main',  // Branch where the workflow is defined
+                    inputs: {
+                        action: 'unsubscribe',
+                        email: email
+                    }
+                })
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('response-message').textContent = `Successfully unsubscribed ${email}.`;
+                } else {
+                    document.getElementById('response-message').textContent = `Failed to unsubscribe ${email}.`;
+                }
+            }).catch(error => {
+                document.getElementById('response-message').textContent = `Error: ${error}`;
+            });
+        }
     </script>
 </body>
 </html>
