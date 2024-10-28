@@ -4,36 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscribe/Unsubscribe</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button.unsubscribe {
+            background-color: #dc3545;
+        }
+
+        button.unsubscribe:hover {
+            background-color: #c82333;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .response-message {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #28a745;
+        }
+
+        .response-message.error {
+            color: #dc3545;
+        }
+    </style>
 </head>
 <body>
-    <h1>Subscribe/Unsubscribe from Newsletter</h1>
-    
-    <!-- Input for Email Address -->
-    <label for="email">Enter your email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-    
-    <!-- Subscribe Button -->
-    <button onclick="subscribe()">Subscribe</button>
-    
-    <!-- Unsubscribe Button -->
-    <button onclick="unsubscribe()">Unsubscribe</button>
-    
-    <!-- Response Message -->
-    <p id="response-message"></p>
+    <div class="container">
+        <h1>Subscribe to Daily News</h1>
+        
+        <!-- Input for Email Address -->
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        
+        <!-- Subscribe Button -->
+        <button onclick="subscribe()">Subscribe</button>
+        
+        <!-- Unsubscribe Button -->
+        <button class="unsubscribe" onclick="unsubscribe()">Unsubscribe</button>
+
+        <!-- Response Message -->
+        <p id="response-message" class="response-message"></p>
+    </div>
 
     <script>
         // Function to handle subscription
         function subscribe() {
             const email = document.getElementById('email').value;
+            const responseMessage = document.getElementById('response-message');
+            
             if (!email) {
-                document.getElementById('response-message').textContent = 'Please enter a valid email address.';
+                responseMessage.textContent = 'Please enter a valid email address.';
+                responseMessage.classList.add('error');
                 return;
             }
             
-            fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
+            fetch('https://api.github.com/repos/<owner>/<repo>/actions/workflows/manage_subscribers.yml/dispatches', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer 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',
+                    'Authorization': 'Bearer <YOUR_GITHUB_TOKEN>',
                     'Accept': 'application/vnd.github.v3+json',
                     'Content-Type': 'application/json'
                 },
@@ -46,27 +134,33 @@
                 })
             }).then(response => {
                 if (response.ok) {
-                    document.getElementById('response-message').textContent = `Successfully subscribed ${email}.`;
+                    responseMessage.textContent = `Successfully subscribed ${email}.`;
+                    responseMessage.classList.remove('error');
                 } else {
-                    document.getElementById('response-message').textContent = `Failed to subscribe ${email}.`;
+                    responseMessage.textContent = `Failed to subscribe ${email}.`;
+                    responseMessage.classList.add('error');
                 }
             }).catch(error => {
-                document.getElementById('response-message').textContent = `Error: ${error}`;
+                responseMessage.textContent = `Error: ${error}`;
+                responseMessage.classList.add('error');
             });
         }
 
         // Function to handle unsubscription
         function unsubscribe() {
             const email = document.getElementById('email').value;
+            const responseMessage = document.getElementById('response-message');
+            
             if (!email) {
-                document.getElementById('response-message').textContent = 'Please enter a valid email address.';
+                responseMessage.textContent = 'Please enter a valid email address.';
+                responseMessage.classList.add('error');
                 return;
             }
             
-            fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
+            fetch('https://api.github.com/repos/<owner>/<repo>/actions/workflows/manage_subscribers.yml/dispatches', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer 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',
+                    'Authorization': 'Bearer <YOUR_GITHUB_TOKEN>',
                     'Accept': 'application/vnd.github.v3+json',
                     'Content-Type': 'application/json'
                 },
@@ -79,12 +173,15 @@
                 })
             }).then(response => {
                 if (response.ok) {
-                    document.getElementById('response-message').textContent = `Successfully unsubscribed ${email}.`;
+                    responseMessage.textContent = `Successfully unsubscribed ${email}.`;
+                    responseMessage.classList.remove('error');
                 } else {
-                    document.getElementById('response-message').textContent = `Failed to unsubscribe ${email}.`;
+                    responseMessage.textContent = `Failed to unsubscribe ${email}.`;
+                    responseMessage.classList.add('error');
                 }
             }).catch(error => {
-                document.getElementById('response-message').textContent = `Error: ${error}`;
+                responseMessage.textContent = `Error: ${error}`;
+                responseMessage.classList.add('error');
             });
         }
     </script>
