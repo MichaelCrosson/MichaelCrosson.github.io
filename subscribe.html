@@ -117,7 +117,9 @@
                 responseMessage.classList.add('error');
                 return;
             }
-    
+
+            console.log(`Attempting to subscribe ${email}`); // Debugging log
+
             fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
                 method: 'POST',
                 headers: {
@@ -125,7 +127,7 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    ref: 'main',  // Branch where the workflow is defined
+                    ref: 'main',  // Ensure this matches your target branch
                     inputs: {
                         action: 'subscribe',
                         email: email
@@ -136,12 +138,14 @@
                     responseMessage.textContent = `Successfully subscribed ${email}.`;
                     responseMessage.classList.remove('error');
                 } else {
-                    responseMessage.textContent = `Failed to subscribe ${email}.`;
+                    responseMessage.textContent = `Failed to subscribe ${email}. Status code: ${response.status}`;
                     responseMessage.classList.add('error');
+                    console.error('Subscription request failed:', response.statusText);  // Debugging log
                 }
             }).catch(error => {
                 responseMessage.textContent = `Error: ${error}`;
                 responseMessage.classList.add('error');
+                console.error('Error:', error);  // Debugging log
             });
         }
 
@@ -155,7 +159,9 @@
                 responseMessage.classList.add('error');
                 return;
             }
-            
+
+            console.log(`Attempting to unsubscribe ${email}`); // Debugging log
+
             fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
                 method: 'POST',
                 headers: {
@@ -163,7 +169,7 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    ref: 'main',  // Branch where the workflow is defined
+                    ref: 'main',  // Ensure this matches your target branch
                     inputs: {
                         action: 'unsubscribe',
                         email: email
@@ -174,12 +180,14 @@
                     responseMessage.textContent = `Successfully unsubscribed ${email}.`;
                     responseMessage.classList.remove('error');
                 } else {
-                    responseMessage.textContent = `Failed to unsubscribe ${email}.`;
+                    responseMessage.textContent = `Failed to unsubscribe ${email}. Status code: ${response.status}`;
                     responseMessage.classList.add('error');
+                    console.error('Unsubscription request failed:', response.statusText);  // Debugging log
                 }
             }).catch(error => {
                 responseMessage.textContent = `Error: ${error}`;
                 responseMessage.classList.add('error');
+                console.error('Error:', error);  // Debugging log
             });
         }
     </script>
