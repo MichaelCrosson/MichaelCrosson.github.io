@@ -1,0 +1,40 @@
+name: Manage Subscribers
+
+on:
+  workflow_dispatch:  # Trigger manually or through API
+    inputs:
+      email:
+        description: 'Email to subscribe/unsubscribe'
+        required: true
+      action:
+        description: 'Action: subscribe or unsubscribe'
+        required: true
+        default: 'subscribe'
+
+jobs:
+  manage_subscribers:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: pip install --upgrade pip
+
+    - name: Run subscription management script
+      run: |
+        python manage_subscribers.py ${{ github.event.inputs.action }} ${{ github.event.inputs.email }}
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add subscribers.json
+        git commit -m "Updated subscriber list for ${{ github.event.inputs.action }} ${{ github.event.inputs.email }}"
+        git push
