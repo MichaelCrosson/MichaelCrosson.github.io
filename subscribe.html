@@ -107,8 +107,7 @@
     </div>
 
     <script>
-        const GITHUB_TOKEN = 'Bearer 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'; // Securely replace with your GitHub token
-
+        
         // Function to handle subscription
         function subscribe() {
             const email = document.getElementById('email').value;
@@ -125,7 +124,6 @@
             fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
                 method: 'POST',
                 headers: {
-                    'Authorization': GITHUB_TOKEN,
                     'Accept': 'application/vnd.github.v3+json',
                     'Content-Type': 'application/json'
                 },
@@ -168,7 +166,6 @@
             fetch('https://api.github.com/repos/MichaelCrosson/MichaelCrosson.github.io/actions/workflows/manage_subscribers.yml/dispatches', {
                 method: 'POST',
                 headers: {
-                    'Authorization': GITHUB_TOKEN,
                     'Accept': 'application/vnd.github.v3+json',
                     'Content-Type': 'application/json'
                 },
