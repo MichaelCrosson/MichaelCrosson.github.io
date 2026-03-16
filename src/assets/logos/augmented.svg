@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 72" width="380" height="72">
+  <!-- Green A / mountain icon -->
+  <g transform="translate(0,6)">
+    <!-- Mountain body -->
+    <path d="M30 4 L56 56 L4 56 Z" fill="#3d7a35"/>
+    <!-- Inner highlight -->
+    <path d="M30 16 L48 52 L12 52 Z" fill="#55a847"/>
+    <!-- Person: head -->
+    <circle cx="30" cy="23" r="4.5" fill="white"/>
+    <!-- Person: body -->
+    <path d="M23 38 Q30 30 37 38 L34 52 L26 52 Z" fill="white"/>
+  </g>
+
+  <!-- Wordmark: AUGMENTED AI -->
+  <!-- Using individual letter positioning for the stylized E -->
+  <g font-family="'Arial Black','Impact','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="28" fill="#1c1c1c" letter-spacing="1">
+    <text x="68"  y="46">A</text>
+    <text x="90"  y="46">U</text>
+    <text x="112" y="46">G</text>
+    <text x="136" y="46">M</text>
+    <!-- Stylized E (horizontal bars) -->
+    <g transform="translate(163, 22)">
+      <rect x="0" y="0"  width="17" height="5" rx="1.5" fill="#1c1c1c"/>
+      <rect x="0" y="9"  width="13" height="5" rx="1.5" fill="#1c1c1c"/>
+      <rect x="0" y="18" width="17" height="5" rx="1.5" fill="#1c1c1c"/>
+    </g>
+    <text x="184" y="46">N</text>
+    <text x="207" y="46">T</text>
+    <!-- Stylized E -->
+    <g transform="translate(226, 22)">
+      <rect x="0" y="0"  width="17" height="5" rx="1.5" fill="#1c1c1c"/>
+      <rect x="0" y="9"  width="13" height="5" rx="1.5" fill="#1c1c1c"/>
+      <rect x="0" y="18" width="17" height="5" rx="1.5" fill="#1c1c1c"/>
+    </g>
+    <text x="247" y="46">D</text>
+  </g>
+
+  <!-- "AI" in green -->
+  <text x="280" y="46" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="28" fill="#3d7a35" letter-spacing="1">AI</text>
+</svg>

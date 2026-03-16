@@ -1,0 +1,82 @@
+.section {
+  padding: 100px 0;
+}
+
+.header {
+  margin-bottom: 64px;
+}
+
+.cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Size variants */
+.xl .logoWrap { width: 200px; height: 110px; }
+.xl .name { font-size: 1rem; }
+
+.lg .logoWrap { width: 170px; height: 96px; }
+.lg .name { font-size: 0.9rem; }
+
+.md .logoWrap { width: 150px; height: 84px; }
+.md .name { font-size: 0.82rem; }
+
+.sm .logoWrap { width: 130px; height: 72px; }
+.sm .name { font-size: 0.75rem; }
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  cursor: default;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(102, 126, 234, 0.4);
+  border-color: rgba(102, 126, 234, 0.5);
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.item:hover .name {
+  color: #111;
+}
+
+@media (max-width: 640px) {
+  .xl .logoWrap, .lg .logoWrap, .md .logoWrap, .sm .logoWrap {
+    width: 110px;
+    height: 60px;
+  }
+  .item { padding: 18px 14px; }
+}
